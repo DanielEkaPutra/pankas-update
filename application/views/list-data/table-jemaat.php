@@ -1,8 +1,8 @@
             <!-- Hover table card start -->
             <div class="card">
                                             <div class="card-header">
-                                                <h5>Hover Table</h5>
-                                                <span>use class <code>table-hover</code> inside table element</span>
+                                                <h5> Total Data Jemaat: <?= $total_rows; ?></h5>
+                                                <?= $this->pagination->create_links(); ?>
                                                 <div class="card-header-right">
                                                     <ul class="list-unstyled card-option">
                                                         <li><i class="fa fa fa-wrench open-card-option"></i></li>

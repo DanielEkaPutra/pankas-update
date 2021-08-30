@@ -22,7 +22,6 @@ class Menu extends CI_Controller
     
     public function lihatdata()
     {
-        $data['jemaat'] = $this->modeljemaat->lihatData();
         $this->load->view('list-data/index', $data);
     }
 } 
