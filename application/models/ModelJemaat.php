@@ -12,15 +12,26 @@
         }
 
         // Get Data Per Page
-        public function getJemaat($limit, $start){
+        public function getJemaat($limit, $start, $keyword = null){
             if($start == null){
                 $start = 0;
             }
-            $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
-            LEFT JOIN sektor ON jemaat.sektor = sektor.id
-            WHERE jemaat.status = 1
-            LIMIT $start, $limit";
-            return $this->db->query($page)->result();
+            if($keyword){
+                $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
+                LEFT JOIN sektor ON jemaat.sektor = sektor.id
+                WHERE jemaat.status = 1
+                AND jemaat.nama_depan LIKE '$keyword%'
+                OR jemaat.nama_belakang LIKE '$keyword%'
+                LIMIT $start, $limit";
+                return $this->db->query($page)->result();
+            } else {
+                $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
+                LEFT JOIN sektor ON jemaat.sektor = sektor.id
+                WHERE jemaat.status = 1
+                LIMIT $start, $limit";
+                return $this->db->query($page)->result();
+            }
+            
         }
 
         public function hitungJemaat(){

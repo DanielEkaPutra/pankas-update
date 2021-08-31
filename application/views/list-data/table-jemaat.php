@@ -1,8 +1,25 @@
             <!-- Hover table card start -->
             <div class="card">
                                             <div class="card-header">
-                                                <h5> Total Data Jemaat: <?= $total_rows; ?></h5>
-                                                <?= $this->pagination->create_links(); ?>
+                                                <br>
+                                                <hr>
+                                                <div class="col-md-4">
+                                                    <form action="<?= base_url('jemaat');?>" method="post">
+                                                    <div class="input-group mb-3">
+                                                    <!-- <select id="inputState" class="form-control m-1">
+                                                    <option selected>Yerusalem</option>
+                                                        <option>...</option>
+                                                    </select> -->
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" placeholder="Pencarian" name="keyword" autocomplete="off" autofocus>
+                                                        <div class="input-group-append">
+                                                            <input class="btn btn-primary" type="submit" name="submit"/>
+                                                        </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                                <hr>
                                                 <div class="card-header-right">
                                                     <ul class="list-unstyled card-option">
                                                         <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -28,7 +45,7 @@
                                                             <?php foreach ($jemaat as $j): ?>
                                                             <tr>
                                                                 <td><?= $j->id_jemaat; ?></td>
-                                                                <td><?= $j->nama_depan; ?></td>
+                                                                <td><?= $j->nama_depan; ?> <?= $j->nama_belakang; ?></td>
                                                                 <td><?= $j->nama; ?></td>
                                                                 <td>
                                                                     
@@ -40,6 +57,9 @@
                                                             <?php endforeach ?>
                                                         </tbody>
                                                     </table>
+                                                    <div class="d-flex align-items-center justify-content-center">
+                                                    <?= $this->pagination->create_links(); ?>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
