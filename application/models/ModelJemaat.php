@@ -38,6 +38,13 @@
             return $this->db->get_where('jemaat', array('status' => '1'))->num_rows();
         }
 
+        public function editJemaat($id){
+            $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
+            LEFT JOIN sektor ON jemaat.sektor = sektor.id
+            WHERE jemaat.id_jemaat=$id";
+            return $this->db->query($page)->result();
+        }
+
     }
 
 ?>

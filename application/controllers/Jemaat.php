@@ -31,6 +31,11 @@ class Jemaat extends CI_Controller {
         $data['jemaat'] = $this->modeljemaat->getJemaat($config['per_page'], $data['start'], $data['keyword']);
         $this->load->view('list-data/index', $data);
     }
+
+    public function edit($id){
+       $data['jemaat'] = $this->modeljemaat->editJemaat($id);
+       $this->load->view('list-edit-data/index', $data);
+    }
 }
 
 ?>
