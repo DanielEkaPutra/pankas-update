@@ -71,7 +71,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                     <?php
-                                        $this->load->view('form-edit-data/edit-data-jemaat');
+                                        $this->load->view('tambah-data/input-data-jemaat');
                                     ?>
                                     <!-- Page-body end -->
                                 </div>
