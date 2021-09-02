@@ -39,12 +39,27 @@
         }
 
         public function editJemaat($id){
-            $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
+            $page = "SELECT jemaat.id, jemaat.id_jemaat, jemaat.id_anggota , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
             LEFT JOIN sektor ON jemaat.sektor = sektor.id
             WHERE jemaat.id_jemaat=$id";
             return $this->db->query($page)->result();
         }
 
+        public function editForm($id){
+            // $page = "SELECT * FROM jemaat
+            // LEFT JOIN sektor ON jemaat.sektor = sektor.id
+            // LEFT JOIN tanggaldantempat ON jemaat.id = tanggaldantempat.id
+            // LEFT JOIN alamatjemaat ON jemaat.id_jemaat = alamatjemaat.id_jemaat
+            // WHERE jemaat.id=$id";
+            $this->db->select('*');
+            $this->db->from('jemaat');
+            $this->db->join('sektor', 'jemaat.sektor = sektor.id');
+            $this->db->join('tanggaldantempat', 'jemaat.id = tanggaldantempat.id');
+            $this->db->join('alamatjemaat', 'jemaat.id_jemaat = alamatjemaat.id_jemaat');
+            $this->db->where('jemaat.id', $id);
+            return $query = $this->db->get()->row();
+            // return $this->db->query($page)->result();
+        }
     }
 
 ?>

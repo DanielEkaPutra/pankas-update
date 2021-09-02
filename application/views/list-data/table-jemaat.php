@@ -49,7 +49,7 @@
                                                                 <td><?= $j->nama; ?></td>
                                                                 <td>
                                                                     
-                                                                <a href="<?php echo base_url('jemaat/edit/'.$j -> id_jemaat)?>" ><button class="btn btn-success waves-effect waves-light mb-5 mr-5"> <i class="fa fa-edit"></i> Edit Data Keluarga</button> </a>
+                                                                <a href="<?php echo base_url('jemaat/edit/'.$j -> id)?>" ><button class="btn btn-success waves-effect waves-light mb-5 mr-5"> <i class="fa fa-edit"></i> Edit Data Keluarga</button> </a>
 
                                                                     <a href=""><button class="btn btn-danger waves-effect waves-light mb-5 mr-5"> <i class="fa fa-trash"></i> Hapus </button></a>
                                                                 </td>

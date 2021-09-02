@@ -52,6 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
-
 $route['jemaat/edit/(:any)'] = "Jemaat/edit/$1";
+$route['jemaat/edit_form/(:any)'] = "Jemaat/edit_form/$1";
