@@ -60,6 +60,11 @@
             return $query = $this->db->get()->row();
             // return $this->db->query($page)->result();
         }
+
+        public function insert_data($data,$table){
+            return $this->db->insert($table,$data);
+        }
+
     }
 
 ?>

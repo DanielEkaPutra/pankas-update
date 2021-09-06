@@ -49,7 +49,7 @@
                           <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Agenda Kegiatan</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li>
-                                  <a href="<?= base_url('menu/inputData')?>" class="waves-effect waves-dark">
+                                  <a href="<?= base_url('jemaat/tambahForm')?>" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.form-components.main">Form Components</span>
                                       <span class="pcoded-mcaret"></span>

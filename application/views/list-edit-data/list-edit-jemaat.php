@@ -44,7 +44,7 @@
                                                         <tbody>
                                                             <?php foreach ($jemaat as $j): ?>
                                                             <tr>
-                                                                <td><?= $j->id_jemaat; ?></td>
+                                                                <td><?= $j->id_jemaat; ?> - <?= $j->id_anggota; ?></td>
                                                                 <td><?= $j->nama_depan; ?> <?= $j->nama_belakang; ?></td>
                                                                 <td><?= $j->nama; ?></td>
                                                                 <td>

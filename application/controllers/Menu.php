@@ -15,10 +15,6 @@ class Menu extends CI_Controller
         $this->load->view('menu_dashboard/index');
     }
 
-    public function inputData()
-    {
-        $this->load->view('tambah-data/index');
-    }
     
     public function lihatdata()
     {
