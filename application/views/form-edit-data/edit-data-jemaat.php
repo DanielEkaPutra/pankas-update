@@ -212,13 +212,13 @@
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">RT</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->RT ?>">
+                                                <input type="text" class="form-control" value="<?= $jemaat->rt ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">RW</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->RW ?>">
+                                                <input type="text" class="form-control" value="<?= $jemaat->rw ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
