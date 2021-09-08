@@ -42,7 +42,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label" >ID KWJ</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="id_jemaat" value="<?= $jemaat->id_jemaat ?>">
+                                    <input type="text" class="form-control" name="id_jemaat" value="<?= $jemaat->id_jemaat ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">

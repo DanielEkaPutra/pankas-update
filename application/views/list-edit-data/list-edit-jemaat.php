@@ -20,9 +20,9 @@
                                                     </form>
                                                 </div>
                                                 <hr>
-                                                <?php foreach ($jemaat as $j) {?>
-                                                <a href="<?= base_url('jemaat/anggotaForm/'.$j->id)?>" style="text-decoration:none;" class="btn btn-primary btn">Tambah Anggota</a>
-                                                <?php } ?>
+                                              
+                                                <a href="<?= base_url('jemaat/anggotaForm/'.$tambahAnggota->id)?>" style="text-decoration:none;" class="btn btn-primary btn">Tambah Anggota</a>
+                                    
                                                 <div class="card-header-right">
                                                     <ul class="list-unstyled card-option">
                                                         <li><i class="fa fa fa-wrench open-card-option"></i></li>

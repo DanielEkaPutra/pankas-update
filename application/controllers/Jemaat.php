@@ -133,6 +133,7 @@ class Jemaat extends CI_Controller {
 
     public function edit($id){
        $data['jemaat'] = $this->modeljemaat->editJemaat($id);
+       $data['tambahAnggota'] = $this->modeljemaat->tambahAnggota($id);
        $this->load->view('list-edit-data/index', $data);
     }
 

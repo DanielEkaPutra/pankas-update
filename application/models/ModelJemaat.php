@@ -65,6 +65,13 @@
             return $this->db->insert($table,$data);
         }
 
+        public function tambahAnggota($id){
+            $this->db->select('*');
+            $this->db->from('jemaat');
+            $this->db->where('jemaat.id_jemaat',$id);
+            return $query = $this->db->get()->row();
+        }
+
     }
 
 ?>
