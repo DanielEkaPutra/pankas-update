@@ -39,7 +39,7 @@
         }
 
         public function editJemaat($id){
-            $page = "SELECT jemaat.id, jemaat.id_jemaat, jemaat.id_anggota , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
+            $page = "SELECT jemaat.id, jemaat.id_jemaat, jemaat.status, jemaat.id_anggota , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
             LEFT JOIN sektor ON jemaat.sektor = sektor.id
             WHERE jemaat.id_jemaat=$id";
             return $this->db->query($page)->result();

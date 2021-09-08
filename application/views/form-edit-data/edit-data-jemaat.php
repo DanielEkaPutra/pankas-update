@@ -85,9 +85,9 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
                                 <div class="col-sm-10">
-                                <select name="select" class="form-control" value="<?= $jemaat->jenis_kelamin ?>">
-                                            <option value="1">Laki-Laki</option>
-                                            <option value="2">Perempuan</option>
+                                        <select name="select" class="form-control">
+                                            <option <?php if($jemaat->jenis_kelamin == "1") {echo "selected='selected'";} echo $jemaat->jenis_kelamin;?> value="1">Laki-Laki</option>
+                                            <option <?php if($jemaat->jenis_kelamin == "2") {echo "selected='selected'";} echo $jemaat->jenis_kelamin;?> value="2">Perempuan</option>
                                         </select>
                                 </div>
                             </div>

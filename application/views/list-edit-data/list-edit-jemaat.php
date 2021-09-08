@@ -20,9 +20,9 @@
                                                     </form>
                                                 </div>
                                                 <hr>
-                                                <?php foreach ($jemaat as $j): ?>
+                                                <?php foreach ($jemaat as $j) {?>
                                                 <a href="<?= base_url('jemaat/anggotaForm/'.$j->id)?>" style="text-decoration:none;" class="btn btn-primary btn">Tambah Anggota</a>
-                                                <?php endforeach;?>
+                                                <?php } ?>
                                                 <div class="card-header-right">
                                                     <ul class="list-unstyled card-option">
                                                         <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -41,6 +41,7 @@
                                                                 <th>ID Jemaat</th>
                                                                 <th>Nama Kepala Keluarga</th>
                                                                 <th>Sektor</th>
+                                                                <th>Status</th>
                                                                 <th>Kendali</th>
                                                             </tr>
                                                         </thead>
@@ -50,6 +51,32 @@
                                                                 <td><?= $j->id_jemaat; ?> - <?= $j->id_anggota; ?></td>
                                                                 <td><?= $j->nama_depan; ?> <?= $j->nama_belakang; ?></td>
                                                                 <td><?= $j->nama; ?></td>
+                                                                <td>
+                                                                    <?php
+                                                                    
+                                                                        if($j->status == "1")
+                                                                        {
+                                                                            echo "Kepala Rumah Tangga";
+                                                                        }
+                                                                        else if($j->status == "2")
+                                                                        {
+                                                                            echo "Istri";
+                                                                        }
+                                                                        else if($j->status == "3")
+                                                                        {
+                                                                            echo "Anak";
+                                                                        }
+                                                                        else if($j->status == "4")
+                                                                        {
+                                                                            echo "Kakek";
+                                                                        }
+                                                                        else if($j->status == "5")
+                                                                        {
+                                                                            echo "Nenek";
+                                                                        }
+
+                                                                    ?>
+                                                                </td>
                                                                 <td>
                                                                     
                                                                 <a href="<?php echo base_url('jemaat/edit_form/'.$j -> id)?>" ><button class="btn btn-success waves-effect waves-light mb-5 mr-5"> <i class="fa fa-edit"></i> Edit </button> </a>
