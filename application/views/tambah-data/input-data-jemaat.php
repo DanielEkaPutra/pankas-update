@@ -16,11 +16,12 @@
                                                 <label class="col-sm-2 col-form-label">Sektor</label>
                                                     <div class="col-sm-10">
                                                         <select name="sektor" class="form-control">
+                                                            <option value="">Silahkan Pilih Sektor</option>
                                                             <?php
                                                                 foreach($sektor as $s)
                                                                 {
                                                             ?>
-                                                                <option value="<?= $s->id?>"><?= $s->nama?></option>
+                                                                <option value="<?= $s->id_sektor?>"><?= $s->nama?></option>
                                                             <?php } ?>
                                                         </select>
                                                 </div>

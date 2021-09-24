@@ -1,6 +1,7 @@
             <!-- Hover table card start -->
             <div class="card">
                                             <div class="card-header">
+                                            <h5>Data Anggota Keluarga</h5>
                                                 <br>
                                                 <hr>
                                                 <div class="col-md-4">
@@ -79,9 +80,9 @@
                                                                 </td>
                                                                 <td>
                                                                     
-                                                                <a href="<?php echo base_url('jemaat/edit_form/'.$j -> id)?>" ><button class="btn btn-success waves-effect waves-light mb-5 mr-5"> <i class="fa fa-edit"></i> Edit </button> </a>
+                                                                <a href="<?php echo base_url('jemaat/edit_form/'.$j -> id)?>" ><button class="btn btn-success waves-effect waves-light mb-5 mr-5"> <i class="fa fa-edit"></i></button> </a>
 
-                                                                    <a href=""><button class="btn btn-danger waves-effect waves-light mb-5 mr-5"> <i class="fa fa-trash"></i> Hapus </button></a>
+                                                                    <a href="<?php echo base_url('jemaat/hapus_anggota/'.$j->id)?>"><button class="btn btn-danger waves-effect waves-light mb-5 mr-5"> <i class="fa fa-trash"></i></button></a>
                                                                 </td>
                                                             
                                                             </tr>

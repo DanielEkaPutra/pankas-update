@@ -21,7 +21,7 @@
                                                                 foreach($sektor as $s)
                                                                 {
                                                             ?>
-                                                                <option value="<?= $s->id?>"><?= $s->nama?></option>
+                                                                <option value="<?= $s->id_sektor?>"><?= $s->nama?></option>
                                                             <?php } ?>
                                                         </select>
                                                     </div>
