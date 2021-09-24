@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2021 at 03:47 AM
+-- Generation Time: Sep 24, 2021 at 01:36 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 7.1.32
+-- PHP Version: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `alamatjemaat` (
-  `id` int(11) NOT NULL,
+  `id_alamat` int(11) NOT NULL,
   `id_jemaat` int(11) NOT NULL,
   `alamat` varchar(100) DEFAULT NULL,
   `rt` varchar(5) DEFAULT NULL,
@@ -43,10 +43,9 @@ CREATE TABLE `alamatjemaat` (
 -- Dumping data for table `alamatjemaat`
 --
 
-INSERT INTO `alamatjemaat` (`id`, `id_jemaat`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `provinsi`) VALUES
-(1, 10101, 'PERUM. GRIYA CILANGKAP BLOK B NO 04', NULL, NULL, 'CILANGKAP', 'TAPOS', 'DEPOK', 'JAWA BARAT'),
-(2, 10201, 'Perumahan Pesona Laguna 2', '2', '22', 'Cilangkap', 'Tapos', 'Depok', 'Jawa Barat'),
-(3, 10201, 'Perumahan Pesona Laguna 2', '2', '22', 'Cilangkap', 'Tapos', 'Depok', 'Jawa Barat');
+INSERT INTO `alamatjemaat` (`id_alamat`, `id_jemaat`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `provinsi`) VALUES
+(1, 10201, 'Perumahan Pesona Laguna 2', '2', '22', 'Cilangkap', 'Tapos', 'Depok', 'Jawa Barat'),
+(2, 10101, 'Perumahan Pesona Laguna 2, Blok J2 no 31', '2', '22', 'Cilangkap', 'Tapos', 'Depok', 'Jawa Barat');
 
 -- --------------------------------------------------------
 
@@ -67,18 +66,41 @@ CREATE TABLE `jemaat` (
   `email` varchar(50) DEFAULT NULL,
   `sektor` int(11) DEFAULT NULL,
   `rayon` int(11) NOT NULL,
-  `status` varchar(20) DEFAULT NULL
+  `status` varchar(20) DEFAULT NULL,
+  `pelkat` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jemaat`
 --
 
-INSERT INTO `jemaat` (`id`, `id_jemaat`, `id_anggota`, `nama_depan`, `nama_belakang`, `jenis_kelamin`, `pendidikan`, `pekerjaan`, `telepon`, `email`, `sektor`, `rayon`, `status`) VALUES
-(1, 10101, 0, 'SAMUEL', 'GINTING', 1, NULL, NULL, '082213481429', NULL, 1, 0, '1'),
-(2, 10101, 1, 'YUNETA IRIANTI', 'SINULINGGA', 0, NULL, NULL, NULL, NULL, 1, 0, '0'),
-(3, 10101, 2, 'VIOREN LOVENTA', 'GINTING', 0, NULL, NULL, NULL, NULL, 1, 0, '0'),
-(7, 10201, 0, 'Pujadi Hendra', 'Saputra', 1, 'D3', 'Karyawan Swasta', '08978340944', NULL, 1, 1, '1');
+INSERT INTO `jemaat` (`id`, `id_jemaat`, `id_anggota`, `nama_depan`, `nama_belakang`, `jenis_kelamin`, `pendidikan`, `pekerjaan`, `telepon`, `email`, `sektor`, `rayon`, `status`, `pelkat`) VALUES
+(1, 10201, 0, 'Pujadi Hendra', 'Saputra', 1, 'D3', 'Karyawan Swasta', '08979823762', NULL, 1, 1, '1', 4),
+(2, 10201, 1, 'Clara Magdalena Tiurmaida', 'Sirait', 2, 'D3', 'Ibu Rumah Tangga', '08979823762', NULL, 1, 1, '2', 5),
+(4, 10101, 0, 'David Samuel', 'Pasaribu', 1, 'S2', 'Karyawan Swasta', '08979823762', NULL, 2, 1, '1', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pelkat`
+--
+
+CREATE TABLE `pelkat` (
+  `id_pelkat` int(11) NOT NULL,
+  `nama_pelkat` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pelkat`
+--
+
+INSERT INTO `pelkat` (`id_pelkat`, `nama_pelkat`) VALUES
+(1, 'Pelayanan Anak'),
+(2, 'Persekutuan Teruna'),
+(3, 'Gerakan Pemuda'),
+(4, 'Persekutuan Kaum Bapak'),
+(5, 'Persekutuan Kaum Perempuan'),
+(6, 'Persekutuan Kaum Lanjut Usia');
 
 -- --------------------------------------------------------
 
@@ -119,7 +141,7 @@ INSERT INTO `rayon` (`id_rayon`, `rayon`) VALUES
 --
 
 CREATE TABLE `sektor` (
-  `id` int(11) NOT NULL,
+  `id_sektor` int(11) NOT NULL,
   `nama` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -127,7 +149,7 @@ CREATE TABLE `sektor` (
 -- Dumping data for table `sektor`
 --
 
-INSERT INTO `sektor` (`id`, `nama`) VALUES
+INSERT INTO `sektor` (`id_sektor`, `nama`) VALUES
 (1, 'Yerusalem'),
 (2, 'Bethel'),
 (3, 'Sion'),
@@ -149,7 +171,7 @@ INSERT INTO `sektor` (`id`, `nama`) VALUES
 --
 
 CREATE TABLE `tanggaldantempat` (
-  `id` int(11) NOT NULL,
+  `id_tanggal` int(11) NOT NULL,
   `id_jemaat` int(11) NOT NULL,
   `id_keluarga` int(11) DEFAULT NULL,
   `tanggal_lahir` date DEFAULT NULL,
@@ -170,12 +192,12 @@ CREATE TABLE `tanggaldantempat` (
 -- Dumping data for table `tanggaldantempat`
 --
 
-INSERT INTO `tanggaldantempat` (`id`, `id_jemaat`, `id_keluarga`, `tanggal_lahir`, `tempat_lahir`, `tanggal_baptis`, `tempat_baptis`, `tanggal_sidi`, `tempat_sidi`, `tanggal_nikah`, `tempat_nikah`, `tanggal_meninggal`, `tempat_meninggal`, `tanggal_pindah`, `tempat_pindah`) VALUES
-(1, 10101, 0, '1965-10-03', 'JAKARTA', '1966-08-21', 'PANKAS', '1982-07-04', 'PANKAS', '2001-11-02', 'PANKAS', NULL, NULL, NULL, NULL),
-(2, 10101, 1, '1978-10-19', 'JAKARTA', '1978-12-24', 'PANKAS', '1995-10-01', 'PANKAS', '2001-11-02', 'PANKAS', NULL, NULL, NULL, NULL),
-(3, 10101, 2, '2003-05-28', 'JAKARTA', '2003-12-26', 'PANKAS', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 10201, 0, '2021-09-07', 'Jakarta', '2021-09-06', 'GPIB Effatha', '2021-09-12', 'GPIB Effatha', '2021-09-12', 'GPIB Effatha', '0000-00-00', '', '0000-00-00', ''),
-(5, 10201, 0, '2021-09-16', 'Jakarta', '2021-09-13', 'GPIB Effatha', '2021-09-13', 'GPIB Effatha', '2021-09-12', 'GPIB Effatha', '0000-00-00', '', '0000-00-00', '');
+INSERT INTO `tanggaldantempat` (`id_tanggal`, `id_jemaat`, `id_keluarga`, `tanggal_lahir`, `tempat_lahir`, `tanggal_baptis`, `tempat_baptis`, `tanggal_sidi`, `tempat_sidi`, `tanggal_nikah`, `tempat_nikah`, `tanggal_meninggal`, `tempat_meninggal`, `tanggal_pindah`, `tempat_pindah`) VALUES
+(1, 10201, 0, '2021-09-08', 'Jakarta', '2021-09-07', 'GPIB Effatha', '2021-09-10', 'GPIB Effatha', '2021-09-10', 'GPIB Effatha', '0000-00-00', '', '0000-00-00', ''),
+(2, 10201, 1, '2021-09-05', 'Jakarta', '2021-09-10', 'HKBP Kebayoran Lama', '2021-09-21', 'HKBP Kebayoran Lama', '2021-09-29', 'GPIB Effatha', '0000-00-00', '', '0000-00-00', ''),
+(3, 10201, 2, '2021-09-05', 'Jakarta', '2021-09-16', 'GPIB Effatha', '2021-09-05', 'GPIB Pancaran Kasih', '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
+(4, 10101, 0, '2021-09-07', 'Depok', '2021-09-19', 'HKBP Kebayoran Lama', '2021-09-13', 'GPIB Effatha', '2021-09-13', 'GPIB Effatha', '0000-00-00', '', '2021-09-22', 'GPIB Pancaran Kasih'),
+(5, 10201, 2, '2021-09-13', 'Jakarta', '2021-09-07', 'GPIB Effatha', '2021-09-21', 'GPIB Pancaran Kasih', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -207,7 +229,7 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `nama_depan`, `nama_tenga
 -- Indexes for table `alamatjemaat`
 --
 ALTER TABLE `alamatjemaat`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_alamat`);
 
 --
 -- Indexes for table `jemaat`
@@ -215,6 +237,12 @@ ALTER TABLE `alamatjemaat`
 ALTER TABLE `jemaat`
   ADD PRIMARY KEY (`id`),
   ADD KEY `rayon` (`rayon`);
+
+--
+-- Indexes for table `pelkat`
+--
+ALTER TABLE `pelkat`
+  ADD PRIMARY KEY (`id_pelkat`);
 
 --
 -- Indexes for table `rayon`
@@ -226,13 +254,13 @@ ALTER TABLE `rayon`
 -- Indexes for table `sektor`
 --
 ALTER TABLE `sektor`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_sektor`);
 
 --
 -- Indexes for table `tanggaldantempat`
 --
 ALTER TABLE `tanggaldantempat`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_tanggal`);
 
 --
 -- Indexes for table `user`
@@ -248,13 +276,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `alamatjemaat`
 --
 ALTER TABLE `alamatjemaat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_alamat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jemaat`
 --
 ALTER TABLE `jemaat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `pelkat`
+--
+ALTER TABLE `pelkat`
+  MODIFY `id_pelkat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `rayon`
@@ -266,13 +300,13 @@ ALTER TABLE `rayon`
 -- AUTO_INCREMENT for table `sektor`
 --
 ALTER TABLE `sektor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_sektor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tanggaldantempat`
 --
 ALTER TABLE `tanggaldantempat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_tanggal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
