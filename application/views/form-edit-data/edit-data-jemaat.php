@@ -58,6 +58,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <br>
                         <h4 class="sub-title">Jemaat</h4>
                         <form action="<?= base_url('jemaat/update_data')?>" method="POST">
                             <div class="form-group row">
@@ -125,6 +126,7 @@
                                         </select>
                                     </div>
                                 </div>
+                                <br>
                                 <div class="row">
                                         <div class="col-sm-12">
                                             <h4 class="sub-title">Tanggalan & Tempat</h4>
@@ -203,6 +205,7 @@
                                         </div>
                                     </div>
 
+                                    <br>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <h4 class="sub-title">Alamat Lengkap</h4>

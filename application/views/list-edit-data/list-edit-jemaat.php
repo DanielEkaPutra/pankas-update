@@ -1,9 +1,56 @@
-            <!-- Hover table card start -->
+           
+           <!-- Hover table card start -->
             <div class="card">
                                             <div class="card-header">
                                             <h5>Data Anggota Keluarga</h5>
                                                 <br>
                                                 <hr>
+
+                                                <!-- Form -->
+                                                <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>No ID Jemaat</b></label>
+                                                        <div class="col-sm-10">
+                                                         <input class="form-control" disabled value="<?= $jemaat[0]->id_jemaat ?> - <?= $jemaat[0]->id_anggota ?> "></input>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>No KWJ</b></label>
+                                                        <div class="col-sm-10">
+                                                         <input class="form-control" disabled value="<?= $jemaat[0]->id_jemaat ?>"></input>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>Sektor | Rayon</b></label>
+                                                        <div class="col-sm-10">
+                                                         <input class="form-control" disabled value="<?= $jemaat[0]->nama ?>"></input>
+                                                         <input class="form-control" disabled value="<?= $jemaat[0]->rayon ?>"></input>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>Kepala Keluarga</b></label>
+                                                        <div class="col-sm-10">
+                                                         <input class="form-control" disabled value="<?= $jemaat[0]->nama_depan ?> <?= $jemaat[0]->nama_belakang ?> "></input>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>Alamat</b></label>
+                                                        <div class="col-sm-10">
+                                                         <input class="form-control" disabled value="<?= $jemaat[0]->alamat ?> <?= $jemaat[0]->rt ?> <?= $jemaat[0]->rw ?> <?= $jemaat[0]->kelurahan ?> <?= $jemaat[0]->kecamatan ?> <?= $jemaat[0]->kota ?> <?= $jemaat[0]->provinsi ?>"></input>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>No Telp</b></label>
+                                                        <div class="col-sm-10">
+                                                         <input class="form-control" disabled value="<?= $jemaat[0]->telepon ?>"></input>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>Status Pelayanan</b></label>
+                                                        <div class="col-sm-10">
+                                                         <input class="form-control" disabled value="MAJELIS JEMAAT"></input>
+                                                        </div>
+                                                </div>
+
                                                 <div class="col-md-4">
                                                     <form action="<?= base_url('jemaat');?>" method="post">
                                                     <div class="input-group mb-3">
