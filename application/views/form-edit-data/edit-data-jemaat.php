@@ -10,8 +10,8 @@
                     <div class="card-block">
                     <form action="<?= base_url('jemaat/update_data')?>" method="POST">
                         <div class="row">
-                        <input type="hidden" name="id" value="<?php echo $jemaat->id; ?>">
-                        <input type="hidden" name="id_tanggal" value="<?php echo $jemaat->id_tanggal; ?>">
+                        <input type="text" name="id" value="<?php echo $jemaat->id; ?>">
+                        <input type="text" name="id_tanggal" value="<?php echo $jemaat->id_tanggal; ?>">
                                             <div class="col-sm-12">
                                                 <h4 class="sub-title">Sektor & Rayon</h4>
                                                 <div class="form-group row">
@@ -64,32 +64,32 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label" >ID KWJ</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="<?= $jemaat->id_jemaat ?>">
+                                    <input type="text" name="id_jemaat" class="form-control" value="<?= $jemaat->id_jemaat ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">ID Jemaat</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"
+                                    <input type="text" name="id_anggota" class="form-control"
                                     value="<?= $jemaat->id_anggota ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Nama Depan</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="<?= $jemaat->nama_depan ?>">
+                                    <input type="text" name="nama_depan" class="form-control" value="<?= $jemaat->nama_depan ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Nama Belakang</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" value="<?= $jemaat->nama_belakang ?>">
+                                    <input type="text" name="nama_belakang" class="form-control" value="<?= $jemaat->nama_belakang ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Jenis Kelamin</label>
                                 <div class="col-sm-10">
-                                        <select name="select" class="form-control">
+                                        <select name="jenis_kelamin" class="form-control">
                                             <option <?php if($jemaat->jenis_kelamin == "1") {echo "selected='selected'";} echo $jemaat->jenis_kelamin;?> value="1">Laki-Laki</option>
                                             <option <?php if($jemaat->jenis_kelamin == "2") {echo "selected='selected'";} echo $jemaat->jenis_kelamin;?> value="2">Perempuan</option>
                                         </select>
@@ -98,25 +98,25 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Pendidikan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" value="<?= $jemaat->pendidikan ?>">
+                                        <input type="text" name="pendidikan" class="form-control" value="<?= $jemaat->pendidikan ?>">
                                     </div>
                                 </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Pekerjaan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" value="<?= $jemaat->pekerjaan ?>">
+                                        <input type="text" name="pekerjaan" class="form-control" value="<?= $jemaat->pekerjaan ?>">
                                     </div>
                                 </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" value="<?= $jemaat->telepon ?>">
+                                        <input type="text" name="telepon" class="form-control" value="<?= $jemaat->telepon ?>">
                                     </div>
                                 </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Status Keluarga</label>
                                     <div class="col-sm-10">
-                                    <select name="select" class="form-control">
+                                    <select name="status" class="form-control">
                                             <option <?php if($jemaat->status == "1") {echo "selected='selected'";} echo $jemaat->status;?> value="1">Kepala Keluarga</option>
                                             <option <?php if($jemaat->status == "2") {echo "selected='selected'";} echo $jemaat->status;?> value="2">Istri</option>
                                             <option <?php if($jemaat->status == "3") {echo "selected='selected'";} echo $jemaat->status;?> value="3">Anak</option>
@@ -133,73 +133,73 @@
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
                                                 <div class="col-sm-10">
-                                                <input type="date" class="form-control" value="<?= $jemaat->tanggal_lahir ?>">
+                                                <input type="date" name="tanggal_lahir" class="form-control" value="<?= $jemaat->tanggal_lahir ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tempat Lahir</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->tempat_lahir ?>">
+                                                <input type="text" name="tempat_lahir" class="form-control" value="<?= $jemaat->tempat_lahir ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tanggal Baptis</label>
                                                 <div class="col-sm-10">
-                                                <input type="date" class="form-control" value="<?= $jemaat->tanggal_baptis ?>">
+                                                <input type="date" name="tanggal_baptis" class="form-control" value="<?= $jemaat->tanggal_baptis ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tempat Baptis</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->tempat_baptis ?>">
+                                                <input type="text" name="tempat_baptis" class="form-control" value="<?= $jemaat->tempat_baptis ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tanggal Sidi</label>
                                                 <div class="col-sm-10">
-                                                <input type="date" class="form-control" value="<?= $jemaat->tanggal_sidi ?>">
+                                                <input type="date" name="tanggal_sidi" class="form-control" value="<?= $jemaat->tanggal_sidi ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tempat Sidi</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->tempat_sidi ?>">
+                                                <input type="text" name="tempat_sidi" class="form-control" value="<?= $jemaat->tempat_sidi ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tanggal Menikah</label>
                                                 <div class="col-sm-10">
-                                                <input type="date" class="form-control" value="<?= $jemaat->tanggal_nikah ?>">
+                                                <input type="date" name="tanggal_menikah" class="form-control" value="<?= $jemaat->tanggal_nikah ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tempat Menikah</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->tempat_nikah ?>">
+                                                <input type="text" name="tempat_menikah" class="form-control" value="<?= $jemaat->tempat_nikah ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tanggal Pindah</label>
                                                 <div class="col-sm-10">
-                                                <input type="date" class="form-control" value="<?= $jemaat->tanggal_pindah ?>">
+                                                <input type="date" name="tanggal_pindah" class="form-control" value="<?= $jemaat->tanggal_pindah ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tempat Pindah</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->tempat_pindah ?>">
+                                                <input type="text" name="tempat_pindah" class="form-control" value="<?= $jemaat->tempat_pindah ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tanggal Meninggal</label>
                                                 <div class="col-sm-10">
-                                                <input type="date" class="form-control" value="<?= $jemaat->tanggal_meninggal ?>">
+                                                <input type="date" name="tanggal_meninggal" class="form-control" value="<?= $jemaat->tanggal_meninggal ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tempat Meninggal</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->tempat_meninggal ?>">
+                                                <input type="text" name="tempat_meninggal" class="form-control" value="<?= $jemaat->tempat_meninggal ?>">
                                             </div>
                                         </div>
                                         </div>
@@ -212,43 +212,43 @@
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Alamat</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->alamat ?>">
+                                                <input type="text" name="alamat" class="form-control" value="<?= $jemaat->alamat ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">RT</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->rt ?>">
+                                                <input type="text" name="rt" class="form-control" value="<?= $jemaat->rt ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">RW</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->rw ?>">
+                                                <input type="text" name="rw" class="form-control" value="<?= $jemaat->rw ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Kelurahan</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->kelurahan ?>">
+                                                <input type="text" name="kelurahan" class="form-control" value="<?= $jemaat->kelurahan ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Kecamatan</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->kecamatan ?>">
+                                                <input type="text" name="kecamatan" class="form-control" value="<?= $jemaat->kecamatan ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Kota</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->kota ?>">
+                                                <input type="text" name="kota" class="form-control" value="<?= $jemaat->kota ?>">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Provinsi</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control" value="<?= $jemaat->provinsi ?>">
+                                                <input type="text" name="provinsi" class="form-control" value="<?= $jemaat->provinsi ?>">
                                             </div>
                                         </div>
                                         </div>
