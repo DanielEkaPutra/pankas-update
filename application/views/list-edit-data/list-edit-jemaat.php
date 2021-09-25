@@ -80,8 +80,9 @@
                                                                 </td>
                                                                 <td>
                                                                     
-                                                                <a href="<?php echo base_url('jemaat/edit_form/'.$j -> id)?>" ><button class="btn btn-success waves-effect waves-light mb-5 mr-5"> <i class="fa fa-edit"></i></button> </a>
-
+                                                                    
+                                                                    <a href="<?php echo base_url('jemaat/jemaat_detail/'.$j -> id)?>" ><button class="btn btn-primary waves-effect waves-light mb-5 mr-5"> <i class="fa fa-eye"></i></button> </a>
+                                                                    <a href="<?php echo base_url('jemaat/edit_form/'.$j -> id)?>" ><button class="btn btn-success waves-effect waves-light mb-5 mr-5"> <i class="fa fa-edit"></i></button> </a>
                                                                     <a href="<?php echo base_url('jemaat/hapus_anggota/'.$j->id)?>"><button class="btn btn-danger waves-effect waves-light mb-5 mr-5"> <i class="fa fa-trash"></i></button></a>
                                                                 </td>
                                                             

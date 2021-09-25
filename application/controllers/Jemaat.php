@@ -151,6 +151,12 @@ class Jemaat extends CI_Controller {
         $this->load->view('anggotakeluarga/index', $data);
     }
 
+    public function jemaat_detail($id)
+    {
+        $data['jemaat'] = $this->modeljemaat->editForm($id); 
+        $this->load->view('detail-jemaat/index', $data);
+    }
+
     public function tambah_anggota()
     {
         // Input Sektor & Rayon

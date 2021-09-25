@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/pankas-update/';
+$config['base_url'] = 'http://f51f-139-0-240-82.ngrok.io/pankas-update/';
 
 /*
 |--------------------------------------------------------------------------
