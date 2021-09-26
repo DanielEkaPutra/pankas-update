@@ -8564,7 +8564,7 @@ body.menu-bottom #collapse-menu {
   border-radius: 2px;
   text-transform: capitalize;
   font-size: 15px;
-  padding: 10px 19px;
+  padding: 5px 5px;
   cursor: pointer; }
   @media only screen and (max-width: 480px) {
     .btn {
@@ -8597,12 +8597,12 @@ body.menu-bottom #collapse-menu {
   -webkit-transform: skew(-15deg);
           transform: skew(-15deg); }
 .btn i {
-  margin-right: 5px; }
+  margin-right: 0px; }
 .btn.btn-icon {
   border-radius: 50%;
-  width: 40px;
+  width: 30px;
   line-height: 30px;
-  height: 40px;
+  height: 30px;
   padding: 3px;
   text-align: center; }
 .btn.btn-out {
@@ -15265,7 +15265,7 @@ pre.line-numbers > code {
       margin-bottom: 0; }
 
   .user-card .btn span {
-    font-size: 13px; }
+    font-size: 10px; }
 
   .toolbar-page [class*="col-"] {
     margin-bottom: 30px; }
