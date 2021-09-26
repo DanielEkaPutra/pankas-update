@@ -62,7 +62,7 @@
                                                     <div class="input-group mb-3">
                                                         <input type="text" class="form-control" placeholder="Pencarian" name="keyword" autocomplete="off" autofocus>
                                                         <div class="input-group-append">
-                                                            <input class="btn btn-primary" type="submit" name="submit"/>
+                                                            <input class="btn btn-primary m-1" type="submit" name="submit"/>
                                                         </div>
                                                     </div>
                                                     </form>
