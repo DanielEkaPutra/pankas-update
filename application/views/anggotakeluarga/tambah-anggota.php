@@ -74,14 +74,30 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Pendidikan</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="pendidikan" class="form-control">
+                                    <div class="col-sm-10"> 
+                                        <select name="pendidikan" class="form-control">
+                                            <option value="SD">SD</option>
+                                            <option value="SMP">SMP</option>
+                                            <option value="SMA">SMA</option>
+                                            <option value="D1">D1</option>
+                                            <option value="D2">D2</option>
+                                            <option value="D3">D3</option>
+                                            <option value="S1">S1</option>
+                                            <option value="S2">S2</option>
+                                            <option value="S3">S3</option>
+                                        </select>
                                     </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Pekerjaan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="pekerjaan" class="form-control">
+                                    <select name="pekerjaan" class="form-control">
+                                            <option value="Karyawan Swasta">Karyawan Swasta</option>
+                                            <option value="Pegawai Negeri">Pegawai Negeri</option>
+                                            <option value="Aparatur Sipil Negara">Aparatur Sipil Negara</option>
+                                            <option value="Wirausahawan">Wirausahawan</option>
+                                            <option value="Mahasiswa">Mahasiswa/Siswa</option>
+                                        </select>
                                     </div>
                                 </div>
                             <div class="form-group row">
@@ -181,6 +197,23 @@
                                         </div>
                                     </div>
                                    
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4 class="sub-title">Status</h4>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Status Pelayanan</label>
+                                                <div class="col-sm-10">
+                                                <select name="Kecamatan" class="form-control">
+                                                    <option value="Anggota Jemaat">Anggota Jemaat</option>
+                                                    <option value="Majelis Jemaat">Majelis Jemaat</option>
+                                                    <option value="Koordinator Sektor">Koordinator Sektor</option>
+                                                </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
 
                                     <div class="row d-flex justify-content-end">
                                     <button class="btn btn-primary waves-effect waves-light mb-5 mr-5" type="submit">Submit</button>

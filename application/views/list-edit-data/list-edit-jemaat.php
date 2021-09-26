@@ -51,25 +51,11 @@
                                                         </div>
                                                 </div>
 
-                                                <div class="col-md-4">
-                                                    <form action="<?= base_url('jemaat');?>" method="post">
-                                                    <div class="input-group mb-3">
-                                                    <!-- <select id="inputState" class="form-control m-1">
-                                                    <option selected>Yerusalem</option>
-                                                        <option>...</option>
-                                                    </select> -->
-                                                    </div>
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" placeholder="Pencarian" name="keyword" autocomplete="off" autofocus>
-                                                        <div class="input-group-append">
-                                                            <input class="btn btn-primary m-1" type="submit" name="submit"/>
-                                                        </div>
-                                                    </div>
-                                                    </form>
-                                                </div>
                                                 <hr>
+                                                <div class="d-flex justify-content-end">
+                                                    <a href="<?= base_url('jemaat/anggotaForm/'.$tambahAnggota->id)?>" style="text-decoration:none;" class="btn btn-primary btn text-right">Tambah Anggota</a>
+                                                </div>
                                               
-                                                <a href="<?= base_url('jemaat/anggotaForm/'.$tambahAnggota->id)?>" style="text-decoration:none;" class="btn btn-primary btn">Tambah Anggota</a>
                                     
                                                 <div class="card-header-right">
                                                     <ul class="list-unstyled card-option">
