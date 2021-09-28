@@ -6,7 +6,7 @@
                                                 <hr>
                                             
                                                 
-                                                <form>
+                                                <form  action="<?= base_url('jemaat');?>" method="post">
 
                                                     <div class="row p-3">
                                                         <h4 class="sub-title">Cari Berdasarkan Sektor & Rayon</h4>
@@ -16,22 +16,47 @@
                                                                 <div class="col-sm-4">
                                                                     <select name="sektor" class="form-control">
                                                                         <option value="">Pilih Sektor</option>
+                                                                        <option value="1">Yerusalem</option>
+                                                                        <option value="2">Bethel</option>
+                                                                        <option value="3">Sion</option>
+                                                                        <option value="4">Hermon</option>
+                                                                        <option value="5">Yerikho</option>
+                                                                        <option value="6">Karmel</option>
+                                                                        <option value="7">Pniel</option>
+                                                                        <option value="8">Nazaret</option>
+                                                                        <option value="9">Moria</option>
+                                                                        <option value="10">Getsemani</option>
+                                                                        <option value="11">Betesda</option>
+                                                                        <option value="12">Betlehem</option>
+                                                                        <option value="13">Ebenhaezer</option>
                                                                      
                                                             </select>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <select name="rayon" class="form-control">
                                                                 <option value="">Pilih Rayon</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                                <option value="11">11</option>
+                                                                <option value="12">12</option>
+                                                                <option value="13">13</option>
+                                                                <option value="14">14</option>
+                                                                <option value="15">15</option>
                                                             </select>
                                                             </div>
-                                                            <button class="col-sm-2 btn btn-primary" type="submit">Submit</button>
+                                                            <!-- <button class="col-sm-2 btn btn-primary" type="submit">Submit</button> -->
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
-                                            <hr>
-                                            <div class="col-md-12 d-flex justify-content-end">
-                                                    <form action="<?= base_url('jemaat');?>" method="post">
+                                                <div class="col-md-12 d-flex justify-content-end">
                                                     <div class="input-group mb-3">
                                                     <!-- <select id="inputState" class="form-control m-1">
                                                     <option selected>Yerusalem</option>
@@ -44,8 +69,10 @@
                                                             <input class="btn btn-primary m-2 btn-block" type="submit" name="submit"/>
                                                         </div>
                                                     </div>
-                                                    </form>
                                                 </div>
+                                            </form>
+                                            <hr>
+                                     
 
                                                 <hr>
                                                 

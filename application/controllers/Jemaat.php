@@ -22,13 +22,17 @@ class Jemaat extends CI_Controller {
         // Search
         if($this->input->post('submit')){
             $data['keyword'] = $this->input->post('keyword');
+            $data['sektor'] = $this->input->post('sektor');
+            $data['rayon'] = $this->input->post('rayon');
         } else {
             $data['keyword'] = null;
+            $data['sektor'] = null;
+            $data['rayon'] = null;
         }
         
         //Data
         $data['start'] = $this->uri->segment(3);
-        $data['jemaat'] = $this->modeljemaat->getJemaat($config['per_page'], $data['start'], $data['keyword']);
+        $data['jemaat'] = $this->modeljemaat->getJemaat($config['per_page'], $data['start'], $data['keyword'], $data['sektor'], $data['rayon']);
         $this->load->view('list-data/index', $data);
     }
 
