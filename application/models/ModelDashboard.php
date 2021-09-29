@@ -12,6 +12,16 @@ class ModelDashboard extends CI_Model
     {
         return $this->db->query("SELECT DISTINCT id_jemaat FROM jemaat")->num_rows();
     }
+
+    public function getLaki($table)
+    {
+        return $this->db->get_where($table, array('jenis_kelamin' => '1'));
+    }
+
+    public function getPerempuan($table)
+    {
+        return $this->db->get_where($table, array('jenis_kelamin' => '2'));
+    }
 }
 
 ?>
