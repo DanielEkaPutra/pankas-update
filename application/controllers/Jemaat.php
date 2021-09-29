@@ -56,6 +56,10 @@ class Jemaat extends CI_Controller {
         $telepon = $this->input->post('telepon');
         $status = $this->input->post('status');
 
+        
+        $this->form_validation->set_rules('username', 'required');
+        
+
         // Input Tanggal dan Tempat
         $tanggal_lahir = $this->input->post('tanggal_lahir');
         $tempat_lahir = $this->input->post('tempat_lahir');
@@ -121,6 +125,13 @@ class Jemaat extends CI_Controller {
             'provinsi' => $provinsi
         );
 
+        $cek_id = $this->db->query("SELECT id_jemaat FROM jemaat WHERE id_jemaat='$id_jemaat'")->result();
+
+        if($cek_id > 0)
+        {
+            
+        }
+        
         // input ke table jemaat
         $this->modeljemaat->insert_data($jemaat, 'jemaat');
 

@@ -1,12 +1,38 @@
 <div class="row">
             <!-- task, page, download counter  start -->
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card">
+                    <div class="card-block">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h4 class="text-c-blue"><?= $this->dashboard->get_data('jemaat')->num_rows()?></h4>
+                                <h6 class="text-muted m-b-0">Jumlah Jemaat</h6>
+                            </div>
+                            <div class="col-4 text-right">
+                                <i class="fa fa-hand-o-down f-28"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-c-blue">
+                        <div class="row align-items-center">
+                            <div class="col-9">
+                                <p class="text-white m-b-0">% change</p>
+                            </div>
+                            <div class="col-3 text-right">
+                                <i class="fa fa-line-chart text-white f-16"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card">
                     <div class="card-block">
                         <div class="row align-items-center">
                             <div class="col-8">
                                 <h4 class="text-c-purple"><?= $this->dashboard->getKeluarga()?></h4>
-                                <h6 class="text-muted m-b-0">Keluarga</h6>
+                                <h6 class="text-muted m-b-0">Kepala Keluarga</h6>
                             </div>
                             <div class="col-4 text-right">
                                 <i class="fa fa-bar-chart f-28"></i>
@@ -31,33 +57,8 @@
                     <div class="card-block">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h4 class="text-c-green"><?= $this->dashboard->get_data('pelkat')->num_rows();?></h4>
-                                <h6 class="text-muted m-b-0">Pelkat</h6>
-                            </div>
-                            <div class="col-4 text-right">
-                                <i class="fa fa-file-text-o f-28"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-c-green">
-                        <div class="row align-items-center">
-                            <div class="col-9">
-                                <p class="text-white m-b-0">% change</p>
-                            </div>
-                            <div class="col-3 text-right">
-                                <i class="fa fa-line-chart text-white f-16"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6">
-                <div class="card">
-                    <div class="card-block">
-                        <div class="row align-items-center">
-                            <div class="col-8">
-                                <h4 class="text-c-red">145</h4>
-                                <h6 class="text-muted m-b-0">Jadwal</h6>
+                                <h4 class="text-c-red"><?= $this->dashboard->getLaki('jemaat')->num_rows();?></h4>
+                                <h6 class="text-muted m-b-0">Laki - Laki</h6>
                             </div>
                             <div class="col-4 text-right">
                                 <i class="fa fa-calendar-check-o f-28"></i>
@@ -76,20 +77,21 @@
                     </div>
                 </div>
             </div>
+            
             <div class="col-xl-3 col-md-6">
                 <div class="card">
                     <div class="card-block">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h4 class="text-c-blue"><?= $this->dashboard->get_data('jemaat')->num_rows()?></h4>
-                                <h6 class="text-muted m-b-0">Jemaat</h6>
+                                <h4 class="text-c-green"><?= $this->dashboard->getPerempuan('jemaat')->num_rows();?></h4>
+                                <h6 class="text-muted m-b-0">Perempuan</h6>
                             </div>
                             <div class="col-4 text-right">
-                                <i class="fa fa-hand-o-down f-28"></i>
+                                <i class="fa fa-file-text-o f-28"></i>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer bg-c-blue">
+                    <div class="card-footer bg-c-green">
                         <div class="row align-items-center">
                             <div class="col-9">
                                 <p class="text-white m-b-0">% change</p>

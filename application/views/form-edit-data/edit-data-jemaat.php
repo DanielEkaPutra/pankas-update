@@ -10,8 +10,8 @@
                     <div class="card-block">
                     <form action="<?= base_url('jemaat/update_data')?>" method="POST">
                         <div class="row">
-                        <input type="text" name="id" value="<?php echo $jemaat->id; ?>">
-                        <input type="text" name="id_tanggal" value="<?php echo $jemaat->id_tanggal; ?>">
+                        <input type="hidden" name="id" value="<?php echo $jemaat->id; ?>">
+                        <input type="hidden" name="id_tanggal" value="<?php echo $jemaat->id_tanggal; ?>">
                                             <div class="col-sm-12">
                                                 <h4 class="sub-title">Sektor & Rayon</h4>
                                                 <div class="form-group row">
