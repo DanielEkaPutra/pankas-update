@@ -366,7 +366,7 @@
                                             <p>Apakah data sudah benar ?</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+                                                <button type="submit" name="submit "class="btn btn-success" data-dismiss="modal">Submit</button>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                             </div>
                                         </div>

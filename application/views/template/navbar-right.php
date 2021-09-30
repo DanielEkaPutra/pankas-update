@@ -21,7 +21,7 @@
                           </div>
                           <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Navigation</div>
                           <ul class="pcoded-item pcoded-left-item">
-                              <li class="active">
+                              <li class="">
                                   <a href="<?= base_url('home')?>" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
@@ -35,22 +35,44 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                                   <ul class="pcoded-submenu">
+                                     <li class=" ">
+                                          <a href="<?= base_url('jemaat/tambahForm')?>" class="waves-effect waves-dark">
+                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Input Jemaat</span>
+                                              <span class="pcoded-mcaret"></span>
+                                          </a>
+                                      </li>
                                       <li class=" ">
                                           <a href="<?= base_url('jemaat/index')?>" class="waves-effect waves-dark">
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">List Data Jemaat</span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Data Keluarga</span>
                                               <span class="pcoded-mcaret"></span>
                                           </a>
                                       </li>
                                       <li class=" ">
-                                          <a href="<?= base_url('jemaat/tambahForm')?>" class="waves-effect waves-dark">
+                                          <a href="<?= base_url('jemaat/carijemaat')?>" class="waves-effect waves-dark">
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Jemaat Baru</span>
+                                              <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Cari Data Jemaat</span>
                                               <span class="pcoded-mcaret"></span>
                                           </a>
                                       </li>
-
                                   </ul>
+                                  
                               </li>
                           </ul>
+                          <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Setting</div>
+                                  <ul class="pcoded-item pcoded-left-item">
+                                  <li class="">
+                                    <a href="<?= base_url('home')?>" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-user"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Profile</span>
+                                    </a>
+                                 </li>
+                                  <li class="">
+                                    <a href="<?= base_url('home')?>" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Logout</span>
+                                    </a>
+                                 </li>
+                                </ul>
                       </div>

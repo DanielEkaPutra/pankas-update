@@ -20,9 +20,14 @@
                                                         </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label"><b>Sektor | Rayon</b></label>
+                                                        <label class="col-sm-2 col-form-label"><b>Sektor</b></label>
                                                         <div class="col-sm-10">
                                                          <input class="form-control" disabled value="<?= $jemaat[0]->nama ?>"></input>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label"><b>Rayon</b></label>
+                                                        <div class="col-sm-10">
                                                          <input class="form-control" disabled value="<?= $jemaat[0]->rayon ?>"></input>
                                                         </div>
                                                 </div>

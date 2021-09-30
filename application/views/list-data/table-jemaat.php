@@ -6,14 +6,13 @@
                                                 <hr>
                                             
                                                 
-                                                <form  action="<?= base_url('jemaat');?>" method="post">
+                                                <form action="<?= base_url('jemaat');?>" method="post">
 
                                                     <div class="row p-3">
                                                         <h4 class="sub-title">Cari Berdasarkan Sektor & Rayon</h4>
                                                         <div class="col-sm-12">
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Sektor | Rayon</label>
-                                                                <div class="col-sm-4">
+                                                                 <div class="col-sm-4">
                                                                     <select name="sektor" class="form-control">
                                                                         <option value="">Pilih Sektor</option>
                                                                         <option value="1">Yerusalem</option>
@@ -52,29 +51,11 @@
                                                                 <option value="15">15</option>
                                                             </select>
                                                             </div>
-                                                            <!-- <button class="col-sm-2 btn btn-primary" type="submit">Submit</button> -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 d-flex justify-content-end">
-                                                    <div class="input-group mb-3">
-                                                    <!-- <select id="inputState" class="form-control m-1">
-                                                    <option selected>Yerusalem</option>
-                                                        <option>...</option>
-                                                    </select> -->
-                                                    </div>
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" placeholder="Pencarian" name="keyword" autocomplete="off" autofocus>
-                                                        <div class="input-group-append">
-                                                            <input class="btn btn-primary m-2 btn-block" type="submit" name="submit"/>
+                                                          <input class="col-sm-2 btn btn-primary" value="Submit" type="submit" name="submit"/>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </form>
-                                            <hr>
-                                     
-
-                                                <hr>
                                                 
                                                 <div class="card-header-right">
                                                     <ul class="list-unstyled card-option">

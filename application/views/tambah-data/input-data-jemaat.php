@@ -43,7 +43,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">ID KWJ</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="id_jemaat" class="form-control" placeholder="10101 (5 angka)">
+                                    <input type="text" name="id_jemaat" class="form-control" placeholder="10101 (5 angka)" oninvalid="this.setCustomValidity('Mohon di isi kolom ini')" required >
                                 </div>
                             </div>
                             <div class="form-group row">

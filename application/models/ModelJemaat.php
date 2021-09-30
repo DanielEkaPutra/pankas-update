@@ -13,29 +13,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }
 
         // Get Data Per Page
-        public function getJemaat($limit, $start, $keyword = null, $sektor, $rayon){
+        public function getJemaat($limit, $start, $sektor, $rayon){
             if($start == null){
                 $start = 0;
             }
-            if($keyword){
-                $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
-                LEFT JOIN sektor ON jemaat.sektor = sektor.id_sektor
-                WHERE jemaat.status = 1
-                OR jemaat.sektor = '$sektor'
-                OR jemaat.rayon = '$rayon'
-                OR jemaat.nama_depan LIKE '$keyword%'
-                OR jemaat.nama_belakang LIKE '$keyword%'
-                LIMIT $start, $limit";
-                return $this->db->query($page)->result();
-            } else {
                 $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
                 LEFT JOIN sektor ON jemaat.sektor = sektor.id_sektor
                 WHERE jemaat.status = 1
                 AND jemaat.sektor = '$sektor'
                 AND jemaat.rayon = '$rayon'
                 LIMIT $start, $limit";
-                return $this->db->query($page)->result();
-            }   
+                return $this->db->query($page)->result();  
             
         }
       
