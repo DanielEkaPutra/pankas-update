@@ -71,7 +71,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                     <?php
-                                        $this->load->view('tambah-data/input-data-jemaat');
+                                        $this->load->view('user/list-user');
                                     ?>
                                     <!-- Page-body end -->
                                 </div>

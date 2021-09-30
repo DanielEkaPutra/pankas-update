@@ -73,7 +73,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             return $query = $this->db->get()->row();
         }
 
-        public function update_data($table,$data,$where)
+        public function update_data(her$table,$data,$we)
         {
             return $this->db->update($table,$data,$where);
         }

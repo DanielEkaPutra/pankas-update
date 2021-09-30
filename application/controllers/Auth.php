@@ -18,7 +18,7 @@ class Auth extends CI_Controller
     public function login()
     {
         $username = $this->input->post('username');
-		$password = $this->input->post('password');
+		$password = md5($this->input->post('password'));
         $ceklogin = $this->auth->login($username, $password);
         if($ceklogin)
         {
@@ -29,7 +29,9 @@ class Auth extends CI_Controller
 				'password' => $row["password"],
 				'nama_depan' => $row["nama_depan"],
                 'nama_tengah' => $row["nama_tengah"],
-                'nama_belakang' => $row["nama_belakang"]
+                'nama_belakang' => $row["nama_belakang"],
+                'role' => $row["role"],
+                'jenis_kelamin' => $row["jenis_kelamin"]
             );
             $this->session->set_userdata($sessionArr);
             redirect('home', 'refresh');
@@ -40,6 +42,8 @@ class Auth extends CI_Controller
 			$this->session->unset_userdata('nama_depan');
 			$this->session->unset_userdata('nama_tengah');
 			$this->session->unset_userdata('nama_belakang');
+            $this->session->unset_userdata('role');
+            $this->session->unset_userdata('jenis_kelamin');
 			$this->session->set_flashdata('login', 'failed');
 			redirect('auth', 'refresh');
         }

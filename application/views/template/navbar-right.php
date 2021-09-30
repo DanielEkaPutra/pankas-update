@@ -19,7 +19,7 @@
                                   </ul>
                               </div>
                           </div>
-                          <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Navigation</div>
+                          <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">Dashboard</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li class="active">
                                   <a href="<?= base_url('home')?>" class="waves-effect waves-dark">
@@ -53,4 +53,23 @@
                                   </ul>
                               </li>
                           </ul>
+                          <?php
+                          
+                          if($_SESSION['role'] == '1')
+                          {
+                              
+                          
+                          ?>
+                          <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">User</div>
+                          <ul class="pcoded-item pcoded-left-item"> 
+                                <li class="">
+                                  <a href="<?= base_url('user')?>" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-user"></i><b>D</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.dash.main">Data User</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                                </li>
+                          </ul>
+
+                          <?php } ?>
                       </div>
