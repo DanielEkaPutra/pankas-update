@@ -34,6 +34,29 @@ class Jemaat extends CI_Controller {
         $this->load->view('list-data/index', $data);
     }
 
+    public function carijemaat(){
+         // Pagination
+        // Config
+        $config['total_rows'] = $this->modeljemaat->hitungJemaat();
+        $config['per_page'] = 10;
+        $data['total_rows'] = $config['total_rows'];
+
+        // Initialize
+        $this->pagination->initialize($config);
+
+        // Search
+        if($this->input->post('submit')){
+            $data['keyword'] = $this->input->post('keyword');
+        } else {
+            $data['keyword'] = null;
+        }
+        
+        //Data
+        $data['start'] = $this->uri->segment(3);
+        $data['jemaat'] = $this->modeljemaat->getCariJemaat($config['per_page'], $data['start'], $data['keyword']);
+        $this->load->view('cari-jemaat/index', $data);
+    }
+
     public function tambahForm()
     {
         $data['sektor'] = $this->db->query("SELECT * FROM sektor")->result();
