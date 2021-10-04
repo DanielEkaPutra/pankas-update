@@ -210,13 +210,13 @@
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">RT</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" name="rt" class="form-control">
+                                                <input type="text" name="rt" placeholder="02" class="form-control">
                                             </div>
                                         </div>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">RW</label>
                                                 <div class="col-sm-10">
-                                                <input type="text" name="rw" class="form-control">
+                                                <input type="text" name="rw" placeholder="01" class="form-control">
                                             </div>
                                         </div>
                                             <div class="form-group row">
@@ -335,10 +335,21 @@
                                                 </select>
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Pelkat</label>
+                                                <div class="col-sm-10">
+                                                <select name="Kecamatan" class="form-control">
+                                                    <option value="Anggota Jemaat">Pelayanan Anak</option>
+                                                    <option value="Majelis Jemaat">Pelayanan Teruna</option>
+                                                    <option value="Koordinator Sektor">Gerakan Pemuda</option>
+                                                    <option value="Koordinator Sektor">Persekutuan Kaum Bapak</option>
+                                                    <option value="Koordinator Sektor">Persekutuan Kaum Perempuan</option>
+                                                    <option value="Koordinator Sektor">Persekutuan Kaum Lansia</option>
+                                                </select>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-
-                                   
+                                    </div>                               
                                     
                                     <div class="row d-flex justify-content-end mt-5">
                                         <div class="col-sm-10">
