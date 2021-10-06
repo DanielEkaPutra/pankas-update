@@ -211,8 +211,21 @@
                                                 </select>
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Pelkat</label>
+                                                <div class="col-sm-10">
+                                                <select name="Kecamatan" class="form-control">
+                                                    <option value="Anggota Jemaat">Pelayanan Anak</option>
+                                                    <option value="Majelis Jemaat">Pelayanan Teruna</option>
+                                                    <option value="Koordinator Sektor">Gerakan Pemuda</option>
+                                                    <option value="Koordinator Sektor">Persekutuan Kaum Bapak</option>
+                                                    <option value="Koordinator Sektor">Persekutuan Kaum Perempuan</option>
+                                                    <option value="Koordinator Sektor">Persekutuan Kaum Lansia</option>
+                                                </select>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </div>             
                                     <br>
 
                                     <div class="row d-flex justify-content-end">

@@ -27,6 +27,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
             
         }
       
+        public function getCariJemaat($limit, $start, $keyword = null){
+            if($start == null){
+                $start = 0;
+            }
+            if($keyword){
+                $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
+                LEFT JOIN sektor ON jemaat.sektor = sektor.id_sektor
+                WHERE jemaat.status = 1
+                AND jemaat.nama_depan LIKE '%$keyword%'
+                OR jemaat.nama_belakang LIKE '%$keyword%'
+                LIMIT $start, $limit";
+                return $this->db->query($page)->result();
+            } else {
+                $page = "SELECT jemaat.id_jemaat , jemaat.nama_depan, jemaat.nama_belakang, sektor.nama FROM jemaat
+                LEFT JOIN sektor ON jemaat.sektor = sektor.id_sektor
+                WHERE jemaat.status = 1
+                LIMIT $start, $limit";
+                return $this->db->query($page)->result();
+            }   
+            
+        }
 
         public function hitungJemaat(){
             return $this->db->get_where('jemaat', array('status' => '1'))->num_rows();
