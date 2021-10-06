@@ -38,7 +38,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                            <h4 class="sub-title">Jemaat</h4>
+                            <h4 class="sub-title mt-5">Jemaat</h4>
                         
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">ID KWJ</label>
@@ -122,7 +122,7 @@
                                 </div>
                                 <div class="row">
                                         <div class="col-sm-12">
-                                            <h4 class="sub-title">Tanggalan & Tempat</h4>
+                                            <h4 class="sub-title mt-5">Tanggal & Tempat</h4>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
                                                 <div class="col-sm-10">
@@ -200,7 +200,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <h4 class="sub-title">Alamat Lengkap</h4>
+                                            <h4 class="sub-title mt-5">Alamat Lengkap</h4>
                                             <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Alamat</label>
                                                 <div class="col-sm-10">
@@ -324,7 +324,7 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <h4 class="sub-title">Status</h4>
+                                            <h4 class="sub-title mt-5">Status</h4>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Status Pelayanan</label>
                                                 <div class="col-sm-10">
