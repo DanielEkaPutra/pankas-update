@@ -342,6 +342,17 @@ class Jemaat extends CI_Controller {
         $this->modeljemaat->delete_data($where, 'jemaat');
         redirect('jemaat');
     }
+
+    public function downloadPdf($id)
+    {
+        $data['kepalakeluarga'] = $this->modeljemaat->getKK($id);
+        $data['print'] = $this->modeljemaat->viewPDF($id);
+        $this->load->library('pdf');
+        $this->pdf->setPaper('A4', 'landscape');
+        
+        $this->pdf->filename = "Kartu Warga Jemaat GPIB Pancaran Kasih Depok";
+        $this->pdf->load_view('export-pdf/index', $data);
+    }
 }
 
 ?>

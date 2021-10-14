@@ -57,7 +57,13 @@
 
                     <hr>
                     <div class="d-flex justify-content-end">
-                        <a href="<?= base_url('jemaat/anggotaForm/'.$tambahAnggota->id)?>" style="text-decoration:none;" class="btn btn-primary btn text-right">Tambah Anggota</a>
+                        <a href="<?= base_url('jemaat/downloadPdf/'.$jemaat[0]->id_jemaat)?>" style="text-decoration:none;" class="btn btn-danger btn text-right">Download PDF</a>
+                        <?php
+                            if($_SESSION['role'] == "1" || $_SESSION['role'] == '2')
+                            {
+                        ?>
+                        <a href="<?= base_url('jemaat/anggotaForm/'.$tambahAnggota->id)?>" style="text-decoration:none;" class="btn btn-primary btn text-right ml-3">Tambah Anggota</a>
+                        <?php } ?>
                     </div>
                         
             

@@ -82,7 +82,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             return $query = $this->db->get()->row();
         }
 
-        public function update_data(her$table,$data,$we)
+        public function update_data($table,$data,$we)
         {
             return $this->db->update($table,$data,$where);
         }
@@ -91,6 +91,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
         {
             $this->db->where($where);
             $this->db->delete($table);
+        }
+
+        public function get_data($table)
+        {
+            return $this->db->get($table)->result();
+        }
+
+        public function viewPDF($id_jemaat){
+            $this->db->select('*');
+            $this->db->from('jemaat');
+            $this->db->join('sektor', 'jemaat.sektor = sektor.id_sektor');
+            $this->db->join('tanggaldantempat', 'jemaat.id = tanggaldantempat.id_tanggal');
+            $this->db->join('alamatjemaat', 'jemaat.id_jemaat = alamatjemaat.id_jemaat');
+            $this->db->where('jemaat.id_jemaat', $id_jemaat);
+            return $query = $this->db->get()->result();
+        }
+
+        public function getKK($id_jemaat){
+            $page = "SELECT jemaat.id, jemaat.id_jemaat, jemaat.status, jemaat.id_anggota , jemaat.nama_depan, jemaat.nama_belakang, jemaat.rayon, jemaat.telepon, sektor.nama, alamatjemaat.alamat, alamatjemaat.rt, alamatjemaat.rw, alamatjemaat.kelurahan, alamatjemaat.kecamatan, alamatjemaat.kota, alamatjemaat.provinsi FROM jemaat
+            LEFT JOIN sektor ON jemaat.sektor = sektor.id_sektor
+            LEFT JOIN alamatjemaat ON jemaat.id_jemaat = alamatjemaat.id_jemaat
+            WHERE jemaat.id_jemaat=$id_jemaat";
+            return $this->db->query($page)->result();
         }
 
     }
