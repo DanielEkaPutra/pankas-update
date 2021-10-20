@@ -9,6 +9,17 @@ if(flashData)
     });
 }
 
+const duplikatData = $('.gagal-data').data('flashdata');
+
+if(duplikatData)
+{
+  Swal.fire({
+    title: 'Data Anggota Jemaat',
+    text: 'Gagal ' + duplikatData,
+    icon: 'Error'
+  });
+}
+
 $('.tombol-hapus').on('click', function(e) {
 
     const href = $(this).attr('href');

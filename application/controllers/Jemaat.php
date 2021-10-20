@@ -153,21 +153,30 @@ class Jemaat extends CI_Controller {
             'provinsi' => $provinsi
         );
 
-        $cek_id = $this->db->query("SELECT id_jemaat FROM jemaat WHERE id_jemaat='$id_jemaat'")->result();
+        $this->form_validation->set_rules('id_jemaat', 'ID Jemaat', 'required|is_unique[jemaat.id_jemaat]', 
+            array(
+                'is_unique' => 'ID Jemaat Telah Terdaftar.'
+            )
+        );
 
-        if($cek_id > 0)
+        if ($this->form_validation->run() == TRUE) 
         {
-            
+            $this->modeljemaat->insert_data($jemaat, 'jemaat');
+
+            $this->modeljemaat->insert_data($tanggal, 'tanggaldantempat');
+
+            $this->modeljemaat->insert_data($alamat, 'alamatjemaat');
+            $this->session->set_flashdata('flash', 'Ditambah');
+            redirect('jemaat');
+        } else {
+            $this->session->set_flashdata('flash', 'Ditambah');
+            redirect('jemaat/tambahForm');
         }
         
+        
+        
         // input ke table jemaat
-        $this->modeljemaat->insert_data($jemaat, 'jemaat');
-
-        $this->modeljemaat->insert_data($tanggal, 'tanggaldantempat');
-
-        $this->modeljemaat->insert_data($alamat, 'alamatjemaat');
-        $this->session->set_flashdata('flash', 'Ditambah');
-        redirect('jemaat');
+        
     }
 
     public function edit($id){

@@ -1,3 +1,6 @@
+<div class="gagal-data" data-flashdata="<?php echo $this->session->flashdata('flash')?>">
+
+</div>
 <!-- Page body start -->
     <div class="page-body">
         <div class="row">
