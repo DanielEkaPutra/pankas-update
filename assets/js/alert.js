@@ -16,7 +16,7 @@ if(duplikatData)
   Swal.fire({
     title: 'Data Anggota Jemaat',
     text: 'Gagal ' + duplikatData,
-    icon: 'Error'
+    icon: 'error'
   });
 }
 
