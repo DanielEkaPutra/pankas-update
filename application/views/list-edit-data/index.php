@@ -116,6 +116,8 @@
     <script type="text/javascript" src="<?= base_url(); ?>assets/pages/dashboard/custom-dashboard.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>assets/js/script.js "></script>
     <script src="<?= base_url()?>assets/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url()?>assets/js/alert.js"></script>
+
 </body>
 
 </html>

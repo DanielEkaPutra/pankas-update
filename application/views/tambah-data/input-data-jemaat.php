@@ -328,7 +328,7 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Status Pelayanan</label>
                                                 <div class="col-sm-10">
-                                                <select name="Kecamatan" class="form-control">
+                                                <select name="pelayanan" class="form-control">
                                                     <option value="Anggota Jemaat">Anggota Jemaat</option>
                                                     <option value="Majelis Jemaat">Majelis Jemaat</option>
                                                     <option value="Koordinator Sektor">Koordinator Sektor</option>
@@ -338,7 +338,7 @@
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Pelkat</label>
                                                 <div class="col-sm-10">
-                                                <select name="Kecamatan" class="form-control">
+                                                <select name="pelkat" class="form-control">
                                                     <option value="Anggota Jemaat">Pelayanan Anak</option>
                                                     <option value="Majelis Jemaat">Pelayanan Teruna</option>
                                                     <option value="Koordinator Sektor">Gerakan Pemuda</option>

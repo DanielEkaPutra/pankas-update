@@ -1,4 +1,4 @@
-           
+    
            <!-- Hover table card start -->
             <div class="card">
                 <div class="card-header">
@@ -51,7 +51,24 @@
                     <div class="form-group row">
                             <label class="col-sm-2 col-form-label"><b>Status Pelayanan</b></label>
                             <div class="col-sm-10">
-                                <input class="form-control" disabled value="MAJELIS JEMAAT"></input>
+                                <?php
+                                    if($jemaat[0]->pelayanan == '1')
+                                    {
+                                        echo "<input class='form-control' disabled value='ANGGOTA JEMAAT'></input>";
+                                    }
+                                    else if($jemaat[0]->pelayanan == '2')
+                                    {
+                                        echo "<input class='form-control' disabled value='MAJELIS JEMAAT'></input>";
+                                    }
+                                    else if($jemaat[0]->pelayanan == '3')
+                                    {
+                                        echo "<input class='form-control' disabled value='KOORDINATOR SEKTOR'></input>";
+                                    }
+                                    else
+                                    {
+                                        echo "<input class='form-control' disabled value='DATA TIDAK DIKETAHUI'></input>";
+                                    }
+                                ?>
                             </div>
                     </div>
 
@@ -130,7 +147,7 @@
                                         ?>
                                             <a href="<?php echo base_url('jemaat/jemaat_detail/'.$j -> id)?>" ><button class="btn btn-primary waves-effect waves-light m-1"> <i class="fa fa-eye"></i></button> </a>
                                             <a href="<?php echo base_url('jemaat/edit_form/'.$j -> id)?>" ><button class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-edit"></i></button> </a>
-                                            <a href="<?php echo base_url('jemaat/hapus_anggota/'.$j->id)?>"><button class="btn btn-danger waves-effect waves-light m-1"> <i class="fa fa-trash"></i></button></a>
+                                            <a href="<?= base_url('jemaat/hapus_anggota/'.$j -> id);?>"><button class="btn btn-danger waves-effect waves-light m-1 tombol-hapus"> <i class="fa fa-trash"></i></button></a>
                                         <?php 
                                             }else if($_SESSION['role'] == '2')
                                             {
@@ -143,7 +160,7 @@
                                             }else if($_SESSION['role'] == '3')
                                             {
 
-                                        ?>
+                                        ?>  
                                             <a href="<?php echo base_url('jemaat/jemaat_detail/'.$j -> id)?>" ><button class="btn btn-primary waves-effect waves-light m-1"> <i class="fa fa-eye"></i></button> </a>
                                         <?php
                                         
@@ -153,7 +170,7 @@
                                     </td>
                                 
                                 </tr>
-                                <?php endforeach ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                         <div class="d-flex align-items-center justify-content-center">

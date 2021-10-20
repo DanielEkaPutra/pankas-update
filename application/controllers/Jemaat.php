@@ -80,9 +80,6 @@ class Jemaat extends CI_Controller {
         $pekerjaan = $this->input->post('pekerjaan');
         $telepon = $this->input->post('telepon');
         $status = $this->input->post('status');
-
-        
-        $this->form_validation->set_rules('username', 'required');
         
 
         // Input Tanggal dan Tempat
@@ -108,6 +105,10 @@ class Jemaat extends CI_Controller {
         $kota = $this->input->post('kota');
         $provinsi = $this->input->post('provinsi');
 
+        // Input Status Pelayanan
+        $status_pelayan = $this->input->post('pelayanan');
+        $pelkat = $this->input->post('pelkat');
+
         $jemaat = array(
             'id_jemaat' => $id_jemaat,
             'id_anggota' => $id_anggota,
@@ -119,7 +120,9 @@ class Jemaat extends CI_Controller {
             'telepon' => $telepon,
             'status' => $status,
             'sektor' => $sektor,
-            'rayon' => $rayon
+            'rayon' => $rayon,
+            'pelayanan' => $status_pelayan,
+            'pelkat' => $pelkat
         );
 
         $tanggal = array(
@@ -163,7 +166,7 @@ class Jemaat extends CI_Controller {
         $this->modeljemaat->insert_data($tanggal, 'tanggaldantempat');
 
         $this->modeljemaat->insert_data($alamat, 'alamatjemaat');
-
+        $this->session->set_flashdata('flash', 'Ditambah');
         redirect('jemaat');
     }
 
@@ -224,6 +227,10 @@ class Jemaat extends CI_Controller {
         $tanggal_meninggal = $this->input->post('tanggal_meninggal');
         $tempat_meninggal = $this->input->post('tempat_meninggal');
 
+        // Status pelayanan
+        $status_pelayan = $this->input->post('pelayanan');
+        $pelkat = $this->input->post('pelkat');
+
         $jemaat = array(
             'id_jemaat' => $id_jemaat,
             'id_anggota' => $id_anggota,
@@ -235,7 +242,9 @@ class Jemaat extends CI_Controller {
             'telepon' => $telepon,
             'status' => $status,
             'sektor' => $sektor,
-            'rayon' => $rayon
+            'rayon' => $rayon,
+            'pelayanan' => $status_pelayan,
+            'pelkat' => $pelkat
         );
 
         $tanggal = array(
@@ -254,11 +263,12 @@ class Jemaat extends CI_Controller {
             'tanggal_meninggal' => $tanggal_meninggal,
             'tempat_meninggal' => $tempat_meninggal
         );
+        
 
         $this->modeljemaat->insert_data($jemaat, 'jemaat');
 
         $this->modeljemaat->insert_data($tanggal, 'tanggaldantempat');
-
+        $this->session->set_flashdata('flash', 'Ditambah');
         redirect('jemaat');
 
     }
@@ -267,6 +277,7 @@ class Jemaat extends CI_Controller {
     {
         $id = $this->input->post('id');
         $id_tanggal = $this->input->post('id_tanggal');
+        $id_alamat = $this->input->post('id_alamat');
         // Input Sektor & Rayon
         $sektor = $this->input->post('sektor');
         $rayon = $this->input->post('rayon');
@@ -282,6 +293,15 @@ class Jemaat extends CI_Controller {
         $telepon = $this->input->post('telepon');
         $status = $this->input->post('status');
 
+        // Alamat
+        $alamat = $this->input->post('alamat');
+        $rt = $this->input->post('rt');
+        $rw = $this->input->post('rw');
+        $kelurahan = $this->input->post('kelurahan');
+        $kecamatan = $this->input->post('kecamatan');
+        $kota = $this->input->post('kota');
+        $provinsi = $this->input->post('provinsi');
+
         // Input Tanggal dan Tempat
         $tanggal_lahir = $this->input->post('tanggal_lahir');
         $tempat_lahir = $this->input->post('tempat_lahir');
@@ -296,8 +316,14 @@ class Jemaat extends CI_Controller {
         $tanggal_meninggal = $this->input->post('tanggal_meninggal');
         $tempat_meninggal = $this->input->post('tempat_meninggal');
 
+        // Status pelayanan
+        $pelayanan = $this->input->post('pelayanan');
+        $pelkat = $this->input->post('pelkat');
+
         $where = array('id' => $id);
         $where2 = array('id_tanggal' => $id_tanggal);
+        $where3 = array('id_alamat' => $id_alamat);
+        
         $jemaat = array(
             'id_jemaat' => $id_jemaat,
             'id_anggota' => $id_anggota,
@@ -309,7 +335,19 @@ class Jemaat extends CI_Controller {
             'telepon' => $telepon,
             'status' => $status,
             'sektor' => $sektor,
-            'rayon' => $rayon
+            'rayon' => $rayon,
+            'pelayanan' => $pelayanan,
+            'pelkat' => $pelkat
+        );
+
+        $alamat = array(
+            'alamat' => $alamat,
+            'rt' => $rt,
+            'rw' => $rw,
+            'kelurahan' => $kelurahan,
+            'kecamatan' => $kecamatan,
+            'kota' => $kota,
+            'provinsi' => $provinsi
         );
 
         $tanggal = array(
@@ -329,17 +367,29 @@ class Jemaat extends CI_Controller {
             'tempat_meninggal' => $tempat_meninggal
         );
 
-        $this->modeljemaat->update_data('jemaat', $jemaat,$where);
+        if($jemaat || $alamat || $tanggal)
+        {
+            
+            $this->modeljemaat->update_data('jemaat', $jemaat, $where);
 
-        $this->modeljemaat->update_data('tanggaldantempat', $tanggal,$where2);
+            $this->modeljemaat->update_data('tanggaldantempat', $tanggal, $where2);
 
+            $this->modeljemaat->update_data('alamatjemaat', $alamat, $where3);
+            $this->session->set_flashdata('flash', 'Diubah');
         redirect('jemaat');
+        }
+        else
+        {
+            echo "Data Gagal Di Input";
+        }
+
     }
 
     public function hapus_anggota($id)
     {
         $where = array('id' => $id);
         $this->modeljemaat->delete_data($where, 'jemaat');
+        $this->session->set_flashdata('flash', 'Dihapus');
         redirect('jemaat');
     }
 

@@ -1,4 +1,7 @@
-            <!-- Hover table card start -->
+    <div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('flash')?>">
+
+    </div>
+        <!-- Hover table card start -->
             <div class="card">
                                             <div class="card-header">
                                             <h5>Data Kepala Keluarga</h5>

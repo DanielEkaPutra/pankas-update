@@ -40,7 +40,7 @@ foreach($kepalakeluarga as $kk)
     <p>Nama Keluarga &nbsp;&nbsp; : <?= $kk->nama_depan?> <?= $kk->nama_belakang?></p>
     <p>Alamat Lengkap &nbsp;: <?= $kk->alamat?>, RT 0<?= $kk->rt?>, RW 0<?= $kk->rw?>, <?= $kk->kelurahan?>, 
     <?= $kk->kecamatan?>, <?= $kk->kota?>, <?= $kk->provinsi?></p>
-    <p>No. Telepon &nbsp; &nbsp; &nbsp; &nbsp; :</p>
+    <p>No. Telepon &nbsp; &nbsp; &nbsp; &nbsp; : <?= $kk->telepon?></p>
     <p>Sektor Pelayanan : <?= $kk->nama?></p>
 
     <?php } ?>

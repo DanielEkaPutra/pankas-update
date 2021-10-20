@@ -54,7 +54,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         }
 
         public function editJemaat($id){
-            $page = "SELECT jemaat.id, jemaat.id_jemaat, jemaat.status, jemaat.id_anggota , jemaat.nama_depan, jemaat.nama_belakang, jemaat.rayon, jemaat.telepon, sektor.nama, alamatjemaat.alamat, alamatjemaat.rt, alamatjemaat.rw, alamatjemaat.kelurahan, alamatjemaat.kecamatan, alamatjemaat.kota, alamatjemaat.provinsi FROM jemaat
+            $page = "SELECT jemaat.id, jemaat.id_jemaat, jemaat.status, jemaat.id_anggota , jemaat.nama_depan, jemaat.nama_belakang, jemaat.rayon, jemaat.telepon, jemaat.pelayanan, sektor.nama, alamatjemaat.alamat, alamatjemaat.rt, alamatjemaat.rw, alamatjemaat.kelurahan, alamatjemaat.kecamatan, alamatjemaat.kota, alamatjemaat.provinsi FROM jemaat
             LEFT JOIN sektor ON jemaat.sektor = sektor.id_sektor
             LEFT JOIN alamatjemaat ON jemaat.id_jemaat = alamatjemaat.id_jemaat
             WHERE jemaat.id_jemaat=$id";
