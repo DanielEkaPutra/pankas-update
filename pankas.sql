@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2021 at 08:27 AM
+-- Generation Time: Oct 21, 2021 at 11:15 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.23
 
@@ -39,14 +39,6 @@ CREATE TABLE `alamatjemaat` (
   `provinsi` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `alamatjemaat`
---
-
-INSERT INTO `alamatjemaat` (`id_alamat`, `id_jemaat`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `provinsi`) VALUES
-(1, 10201, 'Perumahan Pesona Laguna 2', '2', '22', 'Cilangkap', 'Tapos', 'Depok', 'Jawa Barat'),
-(2, 10101, 'Perumahan Pesona Laguna 2, Blok J2 no 31', '2', '22', 'Cilangkap', 'Tapos', 'Depok', 'Jawa Barat');
-
 -- --------------------------------------------------------
 
 --
@@ -67,18 +59,9 @@ CREATE TABLE `jemaat` (
   `sektor` int(11) DEFAULT NULL,
   `rayon` int(11) NOT NULL,
   `status` varchar(20) DEFAULT NULL,
+  `pelayanan` int(2) NOT NULL,
   `pelkat` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `jemaat`
---
-
-INSERT INTO `jemaat` (`id`, `id_jemaat`, `id_anggota`, `nama_depan`, `nama_belakang`, `jenis_kelamin`, `pendidikan`, `pekerjaan`, `telepon`, `email`, `sektor`, `rayon`, `status`, `pelkat`) VALUES
-(1, 10201, 0, 'Pujadi Hendra', 'Saputra', 1, 'D3', 'Karyawan Swasta', '08979823762', NULL, 1, 1, '1', 4),
-(4, 10101, 0, 'David Samuel', 'Pasaribu', 1, 'S2', 'Karyawan Swasta', '08979823762', NULL, 2, 1, '1', 4),
-(6, 10201, 1, 'Clara Magdalena', 'Sirait', 2, 'D3', 'Ibu Rumah Tangga', '08979823762', NULL, 1, 1, '2', 0),
-(8, 10201, 2, 'Daniel Eka', 'Putra', 1, 'SMK', 'Mahasiswa', '08979823762', NULL, 1, 1, '3', 0);
 
 -- --------------------------------------------------------
 
@@ -229,17 +212,6 @@ CREATE TABLE `tanggaldantempat` (
   `tempat_pindah` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tanggaldantempat`
---
-
-INSERT INTO `tanggaldantempat` (`id_tanggal`, `id_jemaat`, `id_keluarga`, `tanggal_lahir`, `tempat_lahir`, `tanggal_baptis`, `tempat_baptis`, `tanggal_sidi`, `tempat_sidi`, `tanggal_nikah`, `tempat_nikah`, `tanggal_meninggal`, `tempat_meninggal`, `tanggal_pindah`, `tempat_pindah`) VALUES
-(1, 10201, 0, '2021-09-08', 'Jakarta', '2021-09-07', 'GPIB Effatha', '2021-09-10', 'GPIB Effatha', '2021-09-10', 'GPIB Effatha', '0000-00-00', '', '0000-00-00', ''),
-(3, 10201, 2, '2021-09-05', 'Jakarta', '2021-09-16', 'GPIB Effatha', '2021-09-05', 'GPIB Pancaran Kasih', '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
-(5, 10201, 2, '2021-09-13', 'Jakarta', '2021-09-07', 'GPIB Effatha', '2021-09-21', 'GPIB Pancaran Kasih', '0000-00-00', '', '0000-00-00', '', '0000-00-00', ''),
-(6, 10201, 1, '2021-09-12', 'Jakarta', '2021-09-13', 'HKBP Kebayoran Lama', '2021-09-14', 'HKBP Kebayoran Lama', '2021-09-19', 'GPIB Effatha', '0000-00-00', '', '0000-00-00', ''),
-(8, 10201, 2, '2021-09-05', 'Jakarta', '2021-09-06', 'GPIB Effatha', '2021-09-07', 'GPIB Pancaran Kasih', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '');
-
 -- --------------------------------------------------------
 
 --
@@ -333,13 +305,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `alamatjemaat`
 --
 ALTER TABLE `alamatjemaat`
-  MODIFY `id_alamat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_alamat` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jemaat`
 --
 ALTER TABLE `jemaat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kepengurusan`
@@ -375,7 +347,7 @@ ALTER TABLE `sektor`
 -- AUTO_INCREMENT for table `tanggaldantempat`
 --
 ALTER TABLE `tanggaldantempat`
-  MODIFY `id_tanggal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_tanggal` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
